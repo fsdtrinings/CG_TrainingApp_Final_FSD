@@ -1,0 +1,17 @@
+<div style="vertical-align: top;">
+    <table>
+        <tr>
+            <td> <input type="text" placeholder="Search Through Id" #searchid />  </td>
+            <td> <button (click)="getTrainerById(searchid.value)">Load</button>    </td>
+            
+        </tr>
+    </table>
+    
+    <div *ngIf="isFound == true">
+        {{ins.code}}
+        {{ins.name}}
+        {{ins.domain}}
+        {{ins.email}}
+    </div>
+    
+</div>

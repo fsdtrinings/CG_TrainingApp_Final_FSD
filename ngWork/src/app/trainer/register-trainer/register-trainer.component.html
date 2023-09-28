@@ -1,0 +1,96 @@
+<a routerLink="/adminmain" style="margin-left: 10px;"> Back </a>
+<div style="margin-left: 15%;width: 25%; height: 100%; margin-bottom: 20%;">
+<form (ngSubmit)="doFormSubmit()" #trainerForm = "ngForm">
+
+    <div class="form-group">
+
+        <label>Enter Instructor Name</label>
+        <input type="text" [(ngModel)]="instructor.insName"  
+                class="form-control" id="tn" 
+                name="tn" #trainerName="ngModel"  required pattern="[A-Z][a-z]{5,}$">
+        <div *ngIf="trainerName.invalid && !trainerName.pristine">
+            <span style="color: red;" *ngIf="trainerName.errors?.['required']">
+               
+               Trainer Name is required Field 
+           </span> 
+           <span style="color: red;" *ngIf="trainerName.errors?.['pattern']">
+               Trainer Name is not valid, contains only aplhabats and Min 5 char
+           </span>
+        </div>
+        </div>
+
+           
+    
+    <div class="form-group">
+        <label>Salary</label>
+        <input type="number"  [(ngModel)]="instructor.salary" 
+                 class="form-control" #insalary="ngModel" id="insalary"  name="insalary" required>
+        <div *ngIf="insalary.invalid">
+            <span style="color: red;" *ngIf="insalary.errors?.['required']">
+               
+                Salary cannot be left blank
+           </span> 
+         
+         </div>
+    </div>
+
+    <div class="form-group">
+    <label>Domain</label>
+    <select   [(ngModel)]="instructor.domain"  class="form-control form-control-lg"
+                          id="domain" name="domain">
+        <option selected>Choose...</option>
+        <option value="Programming">Programming</option>
+        <option value="Database">Database</option>
+        <option value="Infrastructure">Infrastructure</option>
+        <option value="Language">Language</option>
+        <option value="Finance">Finance</option>
+        
+      </select>
+    </div>
+       
+    <div class="form-group">
+        <label>Password (default)</label>
+        <input type="password"  [(ngModel)]="instructor.password" readonly="true"
+                 class="form-control" #insPassword="ngModel" id="insPassword"  name="insPassword" required>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text"  [(ngModel)]="instructor.profile.email" 
+                 class="form-control" #insEmail="ngModel" id="insEmail"  name="insEmail">
+    </div>
+
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="number"  [(ngModel)]="instructor.profile.phone" 
+            class="form-control" #insPhone="ngModel" id="insPhone"  name="insPhone" pattern="[7-9]{1}[0-9]{9}$">
+            <div *ngIf="insPhone.invalid">
+                <span style="color: red;" *ngIf="insPhone.errors?.['pattern']">
+                   Enter Valid Phone Number
+               </span> 
+             
+             </div>
+    </div>
+
+    <div class="form-group">
+        <label>House Address</label>
+        <input type="text"  [(ngModel)]="instructor.profile.address" 
+                 class="form-control" #insCityName="ngModel" id="insAddress"  name="insAddress">
+    </div>
+
+    <div class="form-group">
+        <label>CityName</label>
+        <input type="text"  [(ngModel)]="instructor.profile.cityName" 
+                 class="form-control" #insCityName="ngModel" id="insCityName"  name="insCityName">
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="trainerForm.form.invalid"  >Add Trainer</button>
+      
+    
+    
+    
+  
+</form>
+</div>

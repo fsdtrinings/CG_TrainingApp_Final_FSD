@@ -1,0 +1,18 @@
+
+
+    userRole{{userRole}} & Login Status :- {{loginStatus}}
+    <div *ngIf="userRole == 'Admin' && loginStatus == 'true'">
+        <table style=" width: 100%;height: 10%;">
+            <tr>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/registerTrainer"> Add Trainer</a>  </td>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/registerStudent"> Add Student</a>  </td>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/viewTrainers"> View Trainers</a>  </td>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/viewStudents"> View Students</a>  </td>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/#"> Add Course</a>  </td>
+                <td style="width: 15%; text-align: center;">  <a routerLink="/coursetask"> Course Task</a>  </td>
+                
+            </tr>
+        </table>   
+    </div>
+
+    

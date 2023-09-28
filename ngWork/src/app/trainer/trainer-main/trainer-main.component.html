@@ -1,0 +1,41 @@
+<div *ngIf="authStatus == true && isPasswordUpdated == false">
+
+    Reset Password <br/>
+    Enter New Password
+    <input type="text" #newPassword/>
+    <button (click)="changePassword(newPassword.value)">Update Password</button>
+
+</div>
+
+<div style="margin-top: 5px;" *ngIf="authStatus == true && isPasswordUpdated == true">
+    
+    <table>
+        <tr>
+            <td> Registered Name  </td>
+            <td> {{insDTO.name}} </td>
+        </tr>
+        <tr>
+            <td> Trainer Code  </td>
+            <td> {{insDTO.code}} </td>
+        </tr>
+        <tr>
+            <td> Domain  </td>
+            <td> {{insDTO.domain}}</td>
+        </tr>
+        <tr>
+            <td> Registered Email  </td>
+            <td> {{insDTO.email}} </td>
+        </tr>
+        <tr>
+            <td> Registered Salary  </td>
+            <td> {{insDTO.salary}} </td>
+        </tr>
+        <tr>
+            <td> Alligned Course  </td>
+            <td> {{insDTO.courseName}} </td>
+        </tr>
+        
+    </table>
+    
+</div>
+

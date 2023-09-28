@@ -1,0 +1,42 @@
+<div style="margin-top: 10Px;margin-left: 10px;" *ngIf="status == false">
+    <table>
+        <tr>
+            <td>User Code </td>
+            <td> <input type="text" value="{{u}}" #usercode/> </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td> <input type="text" value="{{p}}" #password/> </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Select Login Type </td>
+            <td>
+                <select #userSelect (change)="changeRole(userSelect.value)">
+                    <option disabled="true" selected="true"> Select Userrole </option>
+                    <option> Trainer </option>
+                    <option> Student </option>
+                    <option > Admin </option>
+                </select>
+            </td>           
+            
+        </tr>
+        
+        <tr>
+            <td><button (click)="verifyUser(usercode.value,password.value,userSelect.value)"
+                 [disabled]="doActive"> Login</button> </td>
+            
+        </tr>
+        
+    </table>
+    <br/>
+    <a routerLink="#"> Forgot Password</a>
+</div>
+<div *ngIf="status == true">
+    Welcome {{username}}
+    <br>
+    <a (click)="doLogout()">logout</a>
+</div>
+
+

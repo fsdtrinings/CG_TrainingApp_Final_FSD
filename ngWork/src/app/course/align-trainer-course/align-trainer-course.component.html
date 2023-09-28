@@ -1,0 +1,16 @@
+
+<table>
+    <tr>
+        <td> Enter Course Id </td>
+        <td> <input type="text" placeholder="Course id" #courseId value="{{cid}}"/>  </td>
+     
+        
+    </tr>
+    <tr>
+        <td> Enter Trainer Id </td>
+        <td> <input type="text" placeholder="Trainer Is" #trainerId value="{{tid}}" />  </td>
+      
+        
+    </tr>
+</table>
+<button (click)="doCourseAlignment(courseId.value,trainerId.value)"> Allocate Course To Trainer</button>

@@ -1,0 +1,12 @@
+<div style="margin-left: 15%;width: 25%; height: 100%; margin-bottom: 20%;">
+
+<form (ngSubmit)="doFormSubmit()" #abcForm = "ngForm">
+    Enter code 
+    <input type="text" [(ngModel)] = "a.code" #code="ngModel"> <br/>
+    Enter Name 
+    <input type="text" [(ngModel)] = "a.name" #code="ngModel"> <br/>
+    Enter Price 
+    <input type="number" [(ngModel)] = "a.price" #code="ngModel"> <br/>
+    <button type="submit" class="btn btn-primary mb-2" [disabled]="abcForm.form.invalid"  >Add ABC</button>
+</form>
+</div>
